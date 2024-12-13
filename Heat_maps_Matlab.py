@@ -26,14 +26,14 @@ for n in pre_n:
     print(f"{n} done")
     
 plt.figure(figsize=(10, 8))  
-sns.heatmap(matrix_sum, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(matrix_sum, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 
 plt.title("GC Before Therapy")
 plt.xlabel("Target")
 plt.ylabel("Source")
 matrix_sum = np.zeros((8, 8))
-  
+
 for n in post_n:
     result_path = POST.joinpath(f"{prefix}{n}", f"{folder}{n}",file) 
     linue = scipy.io.loadmat(result_path)
@@ -42,8 +42,8 @@ for n in post_n:
     print(f"{n} done")
     
 plt.figure(figsize=(10, 8)) 
-sns.heatmap(matrix_sum, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(matrix_sum, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 
 plt.title("GC After Therapy")
 plt.xlabel("Target")

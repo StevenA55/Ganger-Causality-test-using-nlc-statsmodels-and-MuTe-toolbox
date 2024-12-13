@@ -12,8 +12,8 @@ import numpy as np
 prefix = 'SUJETO_'
 pre_n = ['482','490','621','638','652','654','733','907','5225','5958','5975','6025']
 post_n = ['855','828','5655','841','846','1079','830','1070','851','698','867','849']
-PRE = Path('./SUJETOS_DE_PRUEBA/PRE/All_signals/Matlab/Heat_maps_nlc')
-POST = Path('./SUJETOS_DE_PRUEBA/POST/All_signals/Matlab/Heat_maps_nlc')
+PRE = Path('./SUJETOS_DE_PRUEBA/PRE/All_signals/Matlab/Heat_maps_nlc_100_neurons')
+POST = Path('./SUJETOS_DE_PRUEBA/POST/All_signals/Matlab/Heat_maps_nlc_100_neurons')
 variable_names = ['VLF','LF','HF',r'$\delta$',r'$\theta$', r'$\alpha$', r'$\beta$', r'$\gamma$']
 matrix_sum = np.zeros((8, 8))
 
@@ -32,8 +32,8 @@ for n in pre_n:
     matrix_sum += matrix
 
 plt.figure(figsize=(10, 8))
-sns.heatmap(matrix_sum, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(matrix_sum, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 
 plt.title("GC Before Therapy")
 plt.xlabel("Target")
@@ -55,8 +55,8 @@ for n in post_n:
     matrix_sum += matrix
 
 plt.figure(figsize=(10, 8))
-sns.heatmap(matrix_sum, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(matrix_sum, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 
 plt.title("GC After Therapy")
 plt.xlabel("Target")

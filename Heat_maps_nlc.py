@@ -17,7 +17,7 @@ post_n = ['00000855-112888','00000828-112888','00005655-LEBS20684','00000841-112
            '00000830-112892','00001070-112837','00000851-112888','00000698-112892','00000867-112888','00000849-113038']
 PRE = Path('./SUJETOS_DE_PRUEBA/PRE/All_signals')
 POST = Path('./SUJETOS_DE_PRUEBA/POST/All_signals')
-
+num_files = 1
 variable_names = ['VLF','LF','HF',r'$\delta$',r'$\theta$', r'$\alpha$', r'$\beta$', r'$\gamma$']
 matrix_sum = np.zeros((8, 8))
 
@@ -34,10 +34,10 @@ for n in pre_n:
             else:
                 matrix[i][j]=0
     matrix_sum += matrix
-
+matrix_sum = matrix_sum/ num_files
 plt.figure(figsize=(10, 8))  
-sns.heatmap(matrix_sum, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(matrix_sum, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 
 plt.title("GC Before Therapy")
 plt.xlabel("Target")
@@ -57,10 +57,10 @@ for n in post_n:
             else:
                 matrix[i][j]=0
     matrix_sum += matrix
-
+matrix_sum = matrix_sum/ num_files
 plt.figure(figsize=(10, 8)) 
-sns.heatmap(matrix_sum, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(matrix_sum, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 
 plt.title("GC After Therapy")
 plt.xlabel("Target")

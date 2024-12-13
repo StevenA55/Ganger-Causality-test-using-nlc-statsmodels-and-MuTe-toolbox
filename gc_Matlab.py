@@ -44,8 +44,8 @@ for edf_file in edf_pre:
     
 p_matrix_pre = p_matrix_sum
 plt.figure(figsize=(10, 8))  #
-sns.heatmap(p_matrix_pre, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(p_matrix_pre, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 plt.title("GC Before Therapy")
 plt.xlabel("Target")
 plt.ylabel("Source")
@@ -78,8 +78,8 @@ for edf_file in edf_post:
     
 p_matrix_post = p_matrix_sum
 plt.figure(figsize=(10, 8))  
-sns.heatmap(p_matrix_post, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(p_matrix_post, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 plt.title("GC After Therapy")
 plt.xlabel("Target")
 plt.ylabel("Source")

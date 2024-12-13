@@ -77,37 +77,37 @@ for edf_file in edf_pre:
         fig, axs = plt.subplots(8, 1, figsize=(10, 10))
         
         axs[0].plot(Power_delta, color='b')
-        axs[0].set_title('Power Delta')
-        axs[0].set_ylabel('Potencia')
+        axs[0].set_title('Power Delta',fontsize=16)
+        axs[0].set_ylabel('Potencia',fontsize=16)
 
         axs[1].plot(Power_theta, color='g')
-        axs[1].set_title('Power Theta')
-        axs[1].set_ylabel('Potencia')
+        axs[1].set_title('Power Theta',fontsize=16)
+        axs[1].set_ylabel('Potencia',fontsize=16)
 
         axs[2].plot(Power_alpha, color='r')
-        axs[2].set_title('Power Alpha')
-        axs[2].set_ylabel('Potencia')
+        axs[2].set_title('Power Alpha',fontsize=16)
+        axs[2].set_ylabel('Potencia',fontsize=16)
 
         axs[3].plot(Power_beta, color='m')
-        axs[3].set_title('Power Beta')
-        axs[3].set_ylabel('Potencia')
+        axs[3].set_title('Power Beta',fontsize=16)
+        axs[3].set_ylabel('Potencia',fontsize=16)
         
         axs[4].plot(Power_gamma, color='c')
-        axs[4].set_title('Power Gamma')
-        axs[4].set_ylabel('Potencia')
+        axs[4].set_title('Power Gamma',fontsize=16)
+        axs[4].set_ylabel('Potencia',fontsize=16)
         
         axs[5].plot(P_VLF, color='c')
-        axs[5].set_title('Very Low Frecuency')
-        axs[5].set_ylabel('Potencia')
+        axs[5].set_title('Very Low Frecuency',fontsize=16)
+        axs[5].set_ylabel('Potencia',fontsize=16)
         
         axs[6].plot(P_LF, color='g')
-        axs[6].set_title('Low Frecuency')
-        axs[6].set_ylabel('Potencia')
+        axs[6].set_title('Low Frecuency',fontsize=16)
+        axs[6].set_ylabel('Potencia',fontsize=16)
 
         axs[7].plot(P_HF, color='r')
-        axs[7].set_title('High Frecuency')
-        axs[7].set_ylabel('Potencia')
-        axs[7].set_xlabel('Muestras')
+        axs[7].set_title('High Frecuency',fontsize=16)
+        axs[7].set_ylabel('Potencia',fontsize=16)
+        axs[7].set_xlabel('Muestras',fontsize=16)
         
         plt.tight_layout()
 
@@ -118,8 +118,8 @@ for edf_file in edf_pre:
 p_matrix_pre = p_matrix_sum / num_files
 
 plt.figure(figsize=(10, 8))  
-sns.heatmap(p_matrix_pre, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(p_matrix_pre, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 
 plt.title("GC Before Therapy")
 plt.xlabel("Target")
@@ -178,38 +178,38 @@ for edf_file in edf_post:
         fig, axs = plt.subplots(8, 1, figsize=(10, 10))
         
         axs[0].plot(Power_delta, color='b')
-        axs[0].set_title('Power Delta')
-        axs[0].set_ylabel('Potencia')
+        axs[0].set_title('Power Delta',fontsize=16)
+        axs[0].set_ylabel('Potencia',fontsize=16)
 
         axs[1].plot(Power_theta, color='g')
-        axs[1].set_title('Power Theta')
-        axs[1].set_ylabel('Potencia')
+        axs[1].set_title('Power Theta',fontsize=16)
+        axs[1].set_ylabel('Potencia',fontsize=16)
 
         axs[2].plot(Power_alpha, color='r')
-        axs[2].set_title('Power Alpha')
-        axs[2].set_ylabel('Potencia')
+        axs[2].set_title('Power Alpha',fontsize=16)
+        axs[2].set_ylabel('Potencia',fontsize=16)
 
         
         axs[3].plot(Power_beta, color='m')
-        axs[3].set_title('Power Beta')
-        axs[3].set_ylabel('Potencia')
+        axs[3].set_title('Power Beta',fontsize=16)
+        axs[3].set_ylabel('Potencia',fontsize=16)
         
         axs[4].plot(Power_gamma, color='c')
-        axs[4].set_title('Power Gamma')
-        axs[4].set_ylabel('Potencia')
+        axs[4].set_title('Power Gamma',fontsize=16)
+        axs[4].set_ylabel('Potencia',fontsize=16)
         
         axs[5].plot(P_VLF, color='c')
-        axs[5].set_title('Very Low Frecuency')
-        axs[5].set_ylabel('Potencia')
+        axs[5].set_title('Very Low Frecuency',fontsize=16)
+        axs[5].set_ylabel('Potencia',fontsize=16)
         
         axs[6].plot(P_LF, color='g')
-        axs[6].set_title('Low Frecuency')
-        axs[6].set_ylabel('Potencia')
+        axs[6].set_title('Low Frecuency',fontsize=16)
+        axs[6].set_ylabel('Potencia',fontsize=16)
 
         axs[7].plot(P_HF, color='r')
-        axs[7].set_title('High Frecuency')
-        axs[7].set_ylabel('Potencia')
-        axs[7].set_xlabel('Muestras')
+        axs[7].set_title('High Frecuency',fontsize=16)
+        axs[7].set_ylabel('Potencia',fontsize=16)
+        axs[7].set_xlabel('Muestras',fontsize=16)
         
         plt.tight_layout()
  
@@ -220,8 +220,8 @@ for edf_file in edf_post:
 p_matrix_post = p_matrix_sum / num_files
 
 plt.figure(figsize=(10, 8))
-sns.heatmap(p_matrix_post, annot=True, cmap="Greys", cbar=True, linewidths=0.5, square=True,
-            xticklabels=variable_names, yticklabels=variable_names)
+sns.heatmap(p_matrix_post, annot=True, cbar=True, linewidths=0.5, square=True,
+            xticklabels=variable_names, yticklabels=variable_names,vmin=0,vmax=12,annot_kws={"fontsize": 18})
 
 plt.title("GC After Therapy")
 plt.xlabel("Target")
